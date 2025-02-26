@@ -1,0 +1,49 @@
+{
+    "headers": [
+        {
+            "id":1,
+            "name": "home",
+            "path": "/"
+        },
+        {
+            "id":2,
+            "name": "about us",
+            "path": "/about"
+        },
+        {
+            "id":3,
+            "name": "product",
+            "path": "/product"
+        },
+        {
+            "id":4,
+            "name": "wishlist",
+            "path": "/wishlist"
+        },
+        {
+            "id":5,
+            "name": "galary",
+            "path": "/galary"
+        },
+        {
+            "id":6,
+            "name": "contact",
+            "path": "/contact"
+        },
+        {
+            "id": 7,
+            "name": "cart",
+            "path": "/cart"
+        },
+        {
+            "id": 8,
+            "name": "My order",
+            "path": "/myorder"
+        },
+        {
+            "id": 9,
+            "name": "My Account",
+            "path": "/myaccount"
+        }
+    ]
+}
