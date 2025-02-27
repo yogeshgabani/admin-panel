@@ -63,11 +63,14 @@ const SignUpForm = () => {
       (c) => c.name === selectedCountryName
     );
     setFieldValue("country", selectedCountry.name || "");
+    setFieldValue("state", "");
+    setFieldValue("city", "");
 
     const filteredStates: any = stateData.filter(
       (state) => state.country_id === selectedCountry?.id
     );
     setStates(filteredStates);
+    
   };
 
   // state select handle
@@ -81,6 +84,7 @@ const SignUpForm = () => {
     );
 
     setFieldValue("state", selectedState.name || "");
+    setFieldValue("city", "");
 
     const filteredCities: any = citiesData.filter(
       (city) => city.state_id === selectedState?.id
