@@ -35,14 +35,14 @@ const Login = () => {
   return (
     <>
       <div className=" text-center w-full p-4 bg-[#f0f0f0]">
-        <h1 className="text-[42px]   text-[#222222]">Login</h1>
-        <p className="text-[#222222] text-[15px]">
+        <h1 className="text-[42px] font-kanit text-[#222222]">Login</h1>
+        {/* <p className="text-[#222222] text-[15px]">
           <Link to="/">Home</Link>&nbsp; &nbsp; &#62; &nbsp; &nbsp;
           <span>Login</span>
-        </p>
+        </p> */}
       </div>
-      <div className="mt-10 grid place-items-center">
-        <div className="sm:min-w-2xl w-full">
+      <div className="mt-10 grid place-items-center w-full px-3">
+        <div className=" w-full">
           <form onSubmit={handleSubmit}>
             <div className="mb-2  w-full">
               <input

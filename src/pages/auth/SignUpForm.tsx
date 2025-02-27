@@ -6,6 +6,7 @@ import citiesData from "../../api/cities.json";
 import { ChangeEvent, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const validationSchema = yup.object().shape({
   firstName: yup.string().required("First Name is required"),
@@ -70,7 +71,6 @@ const SignUpForm = () => {
       (state) => state.country_id === selectedCountry?.id
     );
     setStates(filteredStates);
-    
   };
 
   // state select handle
@@ -94,9 +94,9 @@ const SignUpForm = () => {
 
   return (
     <>
-      <div className="mx-3">
+      <div className="mx-3 w-full">
         <div className="py-[30px] w-full border-b-[1px] border-b-solid text-center border-b-[#f0f0f0] bg-[#f0f0f0]">
-          <h1 className="text-[42px]  text-[#222222]">Register</h1>
+          <h1 className="text-[42px] font-kanit text-[#222222]">Register</h1>
         </div>
         <div className="sm:mt-10 mt-7 grid place-items-center">
           <Formik
@@ -116,8 +116,8 @@ const SignUpForm = () => {
             onSubmit={handleSubmitForm}
           >
             {({ isSubmitting, setFieldValue }) => (
-              <Form className="">
-                <div className=" w-full grid sm:grid-cols-2 grid-cols-1 gap-4">
+              <Form className="w-full md:px-0 px-3">
+                <div className=" w-full grid sm:grid-cols-2 grid-cols-1 gap-4 ">
                   <div className="mt-3">
                     <label className="block text-[#222] font-medium mb-1">
                       First name <span className="text-red-500">*</span>
@@ -345,6 +345,12 @@ const SignUpForm = () => {
             )}
           </Formik>
         </div>
+        <p className="text-[#222222] text-[16px] py-5 sm:text-end text-center pe-4">
+          Already have an account?{" "}
+          <Link to="/login" className="hover:text-blue-700 hover:underline">
+            Login
+          </Link>
+        </p>
       </div>
     </>
   );

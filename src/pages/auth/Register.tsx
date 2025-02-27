@@ -115,11 +115,11 @@ const Signup = () => {
     <>
       <>
         <div className="py-[30px] w-full border-b-[1px] border-b-solid text-center border-b-[#f0f0f0] bg-[#f0f0f0]">
-          <h1 className="text-[42px]  text-[#222222]">Register</h1>
-          <p className="text-[#222222] text-[15px]">
+          <h1 className="text-[42px] font-kanit text-[#222222]">Register</h1>
+          {/* <p className="text-[#222222] text-[15px]">
             <Link to="/">Home</Link>&nbsp; &nbsp; &gt; &nbsp; &nbsp;
             <span>Register</span>
-          </p>
+          </p> */}
         </div>
         <div className="mt-10 grid place-items-center">
           <form onSubmit={handleSubmit}>
