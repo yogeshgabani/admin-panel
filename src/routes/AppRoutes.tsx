@@ -2,7 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "../pages/auth/Login";
 import Dashboard from "../pages/dashboard/Dashboard.tsx";
 import PrivateRoutes from "../components/PrivateRoutes";
-import Signup from "../pages/auth/Register";
+// import Signup from "../pages/auth/Register";
 import AuthLayout from "../pages/auth/AuthLayout";
 import { ToastContainer } from "react-toastify";
 import NotFound from "../components/NotFound";
