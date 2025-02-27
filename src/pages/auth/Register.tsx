@@ -23,6 +23,8 @@ interface City {
   state_id: number;
 }
 
+
+
 const Signup = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -38,8 +40,12 @@ const Signup = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
-  const [states, setStates] = useState<{ id: number; name: string; country_id: number }[]>([]);
-  const [citiesList, setCitiesList] = useState<{ id: number; name: string; state_id: number }[]>([]);
+  const [states, setStates] = useState<
+    { id: number; name: string; country_id: number }[]
+  >([]);
+  const [citiesList, setCitiesList] = useState<
+    { id: number; name: string; state_id: number }[]
+  >([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -103,6 +109,7 @@ const Signup = () => {
       setLoading(false);
     }
   };
+  
 
   return (
     <>
@@ -115,7 +122,7 @@ const Signup = () => {
           </p>
         </div>
         <div className="mt-10 grid place-items-center">
-          <form onSubmit={handleSubmit} >
+          <form onSubmit={handleSubmit}>
             <div className="sm:min-w-2xl w-full grid sm:grid-cols-2 grid-cols-1 gap-4">
               <div className="mt-3">
                 <label className="block text-[#222] font-medium mb-1">
@@ -130,9 +137,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 {error ? (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 ) : (
                   ""
                 )}
@@ -149,10 +154,8 @@ const Signup = () => {
                   placeholder="Last Name"
                   onChange={handleChange}
                 />
-                {error? (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                {error ? (
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 ) : (
                   ""
                 )}
@@ -170,16 +173,12 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 {error ? (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 ) : (
                   ""
                 )}
                 {error && (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 )}
               </div>
               <div className="mt-3">
@@ -203,9 +202,7 @@ const Signup = () => {
                   </span>
                 </div>
                 {error ? (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 ) : (
                   ""
                 )}
@@ -223,9 +220,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 {error ? (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 ) : (
                   ""
                 )}
@@ -246,9 +241,7 @@ const Signup = () => {
                   <option value="other">Other</option>
                 </select>
                 {error ? (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 ) : (
                   ""
                 )}
@@ -272,9 +265,7 @@ const Signup = () => {
                   ))}
                 </select>
                 {error ? (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 ) : (
                   ""
                 )}
@@ -297,9 +288,7 @@ const Signup = () => {
                   ))}
                 </select>
                 {error ? (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 ) : (
                   ""
                 )}
@@ -316,13 +305,13 @@ const Signup = () => {
                 >
                   <option value="">Select City</option>
                   {citiesList.map((city) => (
-                    <option key={city.id} value={city.name}>{city.name}</option>
+                    <option key={city.id} value={city.name}>
+                      {city.name}
+                    </option>
                   ))}
                 </select>
                 {error ? (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 ) : (
                   ""
                 )}
@@ -340,9 +329,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 {error ? (
-                  <p className="text-red-500 ps-2 pt-1 text-[14px]">
-                    {error}
-                  </p>
+                  <p className="text-red-500 ps-2 pt-1 text-[14px]">{error}</p>
                 ) : (
                   ""
                 )}

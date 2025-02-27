@@ -19,6 +19,7 @@ import Orders from "../pages/orders/Orders.tsx";
 import Pending from "../pages/orders/Pending.tsx";
 import Completed from "../pages/orders/Completed.tsx";
 import MyAccount from "../components/MyAccount.tsx";
+import SignUpForm from "../pages/auth/SignUpForm.tsx";
 
 const AppRoutes = () => {
   return (
@@ -38,13 +39,11 @@ const AppRoutes = () => {
         />
 
         <Routes>
-          {/* <Route path="/" element={<Login />} /> */}
-          {/* <Route path="/signup" element={<Signup />} /> */}
-
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/" element={<AuthLayout />}>
             <Route path="login" element={<Login />} />
-            <Route path="signup" element={<Signup />} />
+            {/* <Route path="signup" element={<Signup />} />   */} {/* form validation using normal function */}
+             <Route path="signup" element={<SignUpForm />} />    {/* form validation using formik-yup library */}
             <Route path="forgot" element={<Forgot />} />
           </Route>
 
