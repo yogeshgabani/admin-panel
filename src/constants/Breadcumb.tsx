@@ -9,7 +9,7 @@ const Breadcrumb = () => {
 
   return (
     <div className="py-[30px] border-b-[1px] border-b-solid text-center border-b-[#f0f0f0] bg-[#f0f0f0] my-4">
-      <h1 className="text-[42px] font-inter capitalize font-semibold text-[#222222]">
+      <h1 className="text-[42px] font-kanit capitalize font-semibold text-[#222222]">
         {pathnames[pathnames.length - 1] || "Home"}
       </h1>
       <p className="text-[#222222] font-poppins text-[15px]">

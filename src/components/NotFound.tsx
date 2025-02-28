@@ -23,7 +23,7 @@ const  NotFound = () => {
       <img src={pagenot} alt="page not found" />
       <div className="max-w-md w-full flex items-center border border-solid border-[#e5e7eb]">
         
-          <button className="text-lg w-full rounded-lg w-full bg-gradient-to-r py-3 px-8 from-[#006ab6] to-[#00406d] text-white border-1 border-transparent transition duration-500 hover:text-[#005490] hover:border-[#005490] hover:from-white hover:to-white cursor-pointer"
+          <button className="text-lg w-full rounded-lg bg-gradient-to-r py-3 px-8 from-[#006ab6] to-[#00406d] text-white border-1 border-transparent transition duration-500 hover:text-[#005490] hover:border-[#005490] hover:from-white hover:to-white cursor-pointer"
           onClick={handleBack}
           >
             See More

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import SidebarMenuItems from "../constants/sidebarMenu";
 import { RiShoppingBag3Fill } from "react-icons/ri";
 import { IoIosArrowBack } from "react-icons/io";
-import { IoMdArrowDropdown, IoMdArrowDropright } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const Sidebar: React.FC = () => {
   const [open, setOpen] = useState(window.innerWidth >= 1024);
@@ -66,11 +66,12 @@ const Sidebar: React.FC = () => {
               : "mt-3 relative"
           } 
         ${isMobile && !open ? "-translate-x-full" : "translate-x-0"} 
-         text-white  transition-transform duration-300 ease-in-out overflow-auto max-h-screen
+         text-white  transition-transform duration-300 ease-in-out overflow-hidden
         ${isMobile ? "w-64" : open ? "w-64" : "w-20"}`}
         >
+          {/* eBazzar Logo - Fixed at the Top */}
           <div
-            className="flex items-center gap-2 justify-center p-4 border-b border-white cursor-pointer "
+            className="sticky top-0 z-10 bg-[#7258db] flex items-center gap-2 justify-center p-4 border-b border-white cursor-pointer "
             onClick={() => navigate("/")}
           >
             <RiShoppingBag3Fill className="text-3xl" />
@@ -82,8 +83,8 @@ const Sidebar: React.FC = () => {
               e Bazzar
             </h1>
           </div>
-
-          <nav className="mt-2 mb-10 flex flex-col w-full">
+          {/* Scrollable Menu Section */}
+          <nav className="mt-2 flex flex-col overflow-y-auto max-h-[calc(100vh-185px)]">
             {SidebarMenuItems.map((menuItem) => {
               const isActive = location.pathname === menuItem.path;
               return (
@@ -93,10 +94,10 @@ const Sidebar: React.FC = () => {
                   ${isActive ? "bg-white/20" : ""}
                   ${
                     isMobile
-                      ? "justify-start"
+                      ? "justify-start mx-1"
                       : open
-                      ? "justify-start"
-                      : "justify-center"
+                      ? "justify-start mx-1"
+                      : "justify-center mx-2"
                   }`}
                     onClick={() => handleMenuClick(menuItem)}
                   >
@@ -114,18 +115,26 @@ const Sidebar: React.FC = () => {
                           isMobile ? "block" : open ? "block" : "hidden"
                         }`}
                       >
-                        {activeMenu === menuItem.id ? (
+                        <IoMdArrowDropdown
+                          className={`${
+                            activeMenu === menuItem.id
+                              ? "transition-all duration-200 ease-in-out rotate-180"
+                              : "rotate-0  transition-all duration-200 ease-in-out"
+                          }`}
+                        />
+                        {/* {activeMenu === menuItem.id ? (
                           <IoMdArrowDropdown />
                         ) : (
                           <IoMdArrowDropright />
-                        )}
+                        )} */}
                       </span>
                     )}
                   </div>
 
+                  {/* submenu if available */}
                   {menuItem.submenu && activeMenu === menuItem.id && (
                     <div
-                      className={` flex flex-col overflow-hidden transition-[max-height] duration-300 ease-in-out
+                      className={` flex flex-col font-josefin overflow-hidden transition-[max-height] duration-300 ease-in-out
                         ${
                           activeMenu === menuItem.id
                             ? "max-h-96 opacity-100"
@@ -139,13 +148,13 @@ const Sidebar: React.FC = () => {
                         return (
                           <div
                             key={subItem.id}
-                            className={`cursor-pointer rounded-md px-3 py-1 text-lg hover:bg-white/10 transition-all
+                            className={`cursor-pointer mx-2  rounded-md py-1 text-lg hover:bg-white/10 transition-all
                              ${
                                isMobile
-                                 ? "text-lg"
+                                 ? "text-lg px-3"
                                  : open
-                                 ? "text-lg"
-                                 : " text-[12px]"
+                                 ? "text-lg px-3"
+                                 : " text-[11px] px-1 text-center"
                              }
                             ${isSubActive ? "bg-white/20" : ""}`}
                             onClick={() => handleSubmenuClick(subItem.path)}
@@ -161,7 +170,8 @@ const Sidebar: React.FC = () => {
             })}
           </nav>
 
-          <div className="mt-auto p-4 flex justify-center">
+          {/* Back Button - Fixed at Bottom */}
+          <div className="p-4 flex justify-center">
             <button className="cursor-pointer" onClick={() => setOpen(!open)}>
               <IoIosArrowBack
                 className={`text-3xl transition-transform duration-300 ${
@@ -172,6 +182,7 @@ const Sidebar: React.FC = () => {
           </div>
         </div>
 
+        {/* shopping bag button <1024px screen resolution view*/}
         {isMobile && !open && (
           <button
             className="fixed top-6 left-4 z-50 p-2 bg-[#7258db] text-white rounded-full transition-all duration-300"
